@@ -1,2 +1,96 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="stylesheet" href="style.css" />
+      <title>Bookers</title>
+    </head>
+
+    <body>
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <div class="navbar-brand">
+        <%= link_to "Bookers", root_path %>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <div class="social">
+                <%= link_to root_path do%>
+                    <i class="fas fa-home"></i>
+                    Home
+                <% end %>
+            </div>          
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to about_path do%>
+                    <i class="fas fa-link"></i>
+                    About
+                <% end %>
+              </div>
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to new_user_registration_path do%>
+                    <i class="fas fa-user-plus"></i>
+                    Sign up
+                <% end %>
+              </div>
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to new_user_session_path do%>
+                    <i class="fas fa-sign-in-alt"></i>
+                    Log in
+                <% end %>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+    
+      <main>
+          <p id="notice"></p>
+          <div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
+      <p>in <i class="fas fa-book"></i><strong>Bookers</strong>,</p>
+      <p>you can share and exchange  your opinions , inpressions , and emotions</p>
+      <p> about various books!</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign_in">Log in</a>
+        </div>
+        <div class="row">
+          <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+      </main>
+    
+      <footer>
+      <div class="container mt-5">
+        <div class="row">
+        <div class="mx-auto">
+        <p>CopyRight Infratop.inc</p>
+        </div>
+        </div>
+      </div>
+      </footer>
+    </body>
+
+    <footer>
+    
+    </footer>
+</html>
