@@ -3,21 +3,24 @@ class BooksController < ApplicationController
   end
 
   def index
-    @book = Book.new
+    @newbook = Book.new
     @books = Book.all
     @post_image = new
+    @book = Book.find(params[:id])
+    @user = User.new
   end
 
   def show
-    @book = Book.new
+    @newbook = Book.new
     @books = Book.all
+    @book = Book.find(params[:id])
+    @user = User.new
   end
 
   def edit
   end
   
   def create
-    # 4. トップ画面へリダイレクト
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
