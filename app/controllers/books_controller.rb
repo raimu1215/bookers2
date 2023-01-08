@@ -6,15 +6,16 @@ class BooksController < ApplicationController
     @newbook = Book.new
     @books = Book.all
     @post_image = new
-    @book = Book.find(params[:id])
-    @user = User.new
+    @user = User.find(params)
+    
   end
 
   def show
     @newbook = Book.new
     @books = Book.all
     @book = Book.find(params[:id])
-    @user = User.new
+    @user = User.find(params)
+   
   end
 
   def edit
@@ -32,6 +33,10 @@ class BooksController < ApplicationController
   end
   private
   def book_params
-    params.require(:book).permit(:title, :body, :user_id)
+    params.require(:book).permit(:title, :body, :user_id, :image)
   end
+  def user_params
+    params.require(:user).permit(:name, :profile_image)
+  end
+ 
 end
