@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   
   def index
   @users = User.all
+  profile_image = User.find(1)
+  profile_image.get_profile_image
   end
   
   
@@ -10,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @users = User.find(:id)
   end
   private
   def user_params
