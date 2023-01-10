@@ -26,6 +26,40 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <li>
+            <div class="social">
+                <%= link_to root_path do%>
+                    <i class="fas fa-home"></i>
+                    Home
+                <% end %>
+            </div>          
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to users_path do%>
+                    <i class="fas fa-users"></i>
+                    Users
+                <% end %>
+              </div>
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to user__path do%>
+                    <i class="fas fa-book-open"></i>
+                    Books
+                <% end %>
+              </div>
+          </li>
+          <li>
+              <div class="social">
+                <%= link_to destroy_user_session_path, method: :delete %>
+                    <i class="fas fa-sign-in-alt"></i>
+                    Log out
+                <% end %>
+              </div>
+          </li>
+        <% else %>
           <li>
             <div class="social">
                 <%= link_to root_path do%>
@@ -58,6 +92,7 @@
                 <% end %>
               </div>
           </li>
+          <% end %>
         </ul>
       </div>
     </div>

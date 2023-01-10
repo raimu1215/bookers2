@@ -7,8 +7,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @post_image = new
     @user = User.all
-    profile_image = User.find(1)
-    profile_image.get_profile_image
+    @users = current_user
   end
 
   def show
@@ -34,7 +33,7 @@ class BooksController < ApplicationController
   end
   private
   def book_params
-    params.require(:book).permit(:title, :body, :user_id, :Profileimage)
+    params.require(:book).permit(:title, :body, :user_id, :Profile_image)
   end
   def user_params
     params.require(:user).permit(:name, :profile_image)

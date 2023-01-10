@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   
   def index
   @users = User.all
-  profile_image = User.find(1)
-  profile_image.get_profile_image
+  @users = current_user
   end
   
   
