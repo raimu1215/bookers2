@@ -5,7 +5,7 @@
       <table class="table table-hover table-inverse">
   <body>
     <tr>
-      <th><%= @users.image %></th>
+      <th><%=image_tag @users.get_profile_image %></th>
       <th><%= @users.name %></th>
       <th colspan="3"></th>
 

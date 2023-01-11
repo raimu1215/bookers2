@@ -5,7 +5,6 @@ class BooksController < ApplicationController
   def index
     @newbook = Book.new
     @books = Book.all
-    @post_image = new
     @user = User.all
     @users = current_user
   end
@@ -15,7 +14,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.find(params[:id])
     @user = User.all
-   
+    @users = current_user
   end
 
   def edit
