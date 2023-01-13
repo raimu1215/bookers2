@@ -16,6 +16,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @newbook = Book.new
   end
   
   def create

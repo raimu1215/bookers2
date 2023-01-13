@@ -4,12 +4,15 @@
   <div class="conteiner">
       <div class="low">
           <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-              <h1>Editing Book</h1>
-              <%= form_with model: @book, url: book_path(@book.id), method: :PATCH do |f| %>
-              <p>Title</p>
+              <h1>User info</h1>
+              <%= form_with model: @users, url:'/edit' do |f| %>
+              <p>Name</p>
                 <%= f.text_field :title %>
     
-              <p>Opinion</p>
+              <p>Image</p>
+                <%= f.file_field :image, accept: "image/*" %>
+    
+              <p>Introduction</p>
                   <%= f.text_area :body %>
     
                 <%= f.submit 'Update Book' %>
