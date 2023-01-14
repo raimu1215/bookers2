@@ -1,29 +1,27 @@
-<%= render 'users/user', user: @users %>
 
 <main>
   <div class="conteiner">
       <div class="low">
           <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
               <h1>User info</h1>
-              <%= form_with model: @users, url:'/edit' do |f| %>
+              <%= form_with model: @users do |f| %>
               <p>Name</p>
+              <div class="form-group">
                 <%= f.text_field :title %>
-    
+              </div>
               <p>Image</p>
+              <div class="form-group">
                 <%= f.file_field :image, accept: "image/*" %>
-    
+              </div>
+              <div class="form-group">
               <p>Introduction</p>
                   <%= f.text_area :body %>
-    
-                <%= f.submit 'Update Book' %>
+              </div>
+                <%= f.submit 'Update User' %>
                 <% end %>
             </div>
         </div>
     </div>
-
-<p>
-   <%= link_to 'Show', book_path %>|<%= link_to 'Back', books_path %>
-</p>
 </main>
 
 <footer>
@@ -32,6 +30,6 @@
         <div class="mx-auto">
             <p>CopyRight Infratop.inc</p>
         </div>
-    </div>
+      </div>
   </div>
 </footer>
