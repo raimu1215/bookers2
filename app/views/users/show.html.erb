@@ -27,17 +27,22 @@
 </div>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Books</h2>
+      <h2>Books detail</h2>
       <table class="table table-hover table-inverse">
-  <body>
-    <tr>
+  <thead>
+    <head>
       <th>title</th>
       <th>body</th>
       <th colspan="3"></th>
-
-    </tr>
-  </body>
-
+    </head>
+  </thead>
+  <tbody>
+      <%= @user.each do |user| %>
+      <td><%= @book.title (@book.user_id) %></td>
+      <td><%= @book.body (@book.user_id) %></td>
+      <th colspan="3"></th>
+      <% end %>
+  </tbody>
 </table>
     </div>
   </div>
