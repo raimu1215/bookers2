@@ -21,6 +21,13 @@ class UsersController < ApplicationController
     @users = current_user
   end
   
+  def create
+    user = User.new(book_params)
+    user.save
+    flash[:notice] = 'Welcome! You have signed up successfully.'
+    redirect_to books_path
+  end
+  
   def update
     user = User.find(params[:id])
     user.update(user_params)
