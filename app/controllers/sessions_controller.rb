@@ -10,7 +10,7 @@ end
 def destroy
     session.delete(:user_id)
     @current_user = nil
-    flash[:alert] = "Signed out successfully."
+    flash[:notice] = "Signed out successfully."
     redirect_to :root
 end
     
