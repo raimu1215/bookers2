@@ -1,9 +1,9 @@
 
 <main>
-  <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
+  <% if @newbook.errors.any? %>
+  <%= @newbook.errors.count %>件のエラーが発生しました
   <ul>
-    <% @book.errors.full_messages.each do |message| %>
+    <% @newbook.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
@@ -14,7 +14,7 @@
 
 <div class="container px-5 px-sm-0">
 
- <%= render 'users/user', user: @users %>
+ <%= render 'users/user', users: @users, newbook: @newbook%>
 　
 
     </div>
