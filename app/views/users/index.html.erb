@@ -16,7 +16,7 @@
   <tbody>
     <% @user.each do |user| %>
     <tr>
-    <td><%=image_tag user.get_profile_image %>
+    <td><%=link_to image_tag user.get_profile_image %>
       </td>
       
       <td><%=user.name %></td>
