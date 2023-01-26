@@ -4,7 +4,7 @@
 </div>
 <div class="container px-5 px-sm-0">
 
- <%= render 'users/user', users: @users, newbook: @newbook %>
+ <%= render 'users/user', users: @user, newbook: @newbook %>
 　
 
     </div>
@@ -22,7 +22,9 @@
      <tbody>
       <tr>
       <% @books.each do |book| %>
-      <td><%= image_tag book.user.get_profile_image %></td>
+      <td><%= link_to user_path(book.user.id) do %>
+          <%= image_tag book.user.get_profile_image %>
+          <% end %></td>
       <th><%=link_to book.title, book_path(book)%></th>
       <th><%= book.body %></th>
       <td colspan="3"></td>
